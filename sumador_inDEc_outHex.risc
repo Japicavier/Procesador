@@ -1,0 +1,17 @@
+#Inicio ;;;;;;;;;;;;; calculadora de sumatorias con resultado en Hexadecimal
+rsw R0 ; Aux
+LD  R1 1 ; uno
+LD  R2 0 ; Resultado
+;LD  R3 0 ; Temp
+LD  R4 0; cero
+
+#Loop
+ADD  R2 R0 R2
+SUB  R0 R1 R0
+
+Beq  R0 R4 Imprimir
+Ji Loop 
+#Imprimir
+W7seg R2
+#Halt
+Ji Halt

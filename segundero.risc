@@ -1,0 +1,23 @@
+#Inicio
+LD R0 0 ;dispR
+LD R1 1 ;uno
+LD R2 9 ;diez
+LD R3 0 ;contN
+LD R4 7 ;hex 
+LD R5 0 ;cero
+LD R6 60 ;contMin
+
+#Loop
+beq R6 R5 Inicio
+w7seg R0
+sub R6 R1 R6
+
+beq R3 R2 IfNueve
+add R0 R1 R0
+add R3 R1 R3
+ji Loop
+
+#IfNueve
+add R0 R4 R0
+LD R3 0
+ji Loop
